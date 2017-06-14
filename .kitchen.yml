@@ -1,0 +1,39 @@
+---
+driver:
+  name: ec2
+  require_chef_omnibus: true
+  aws_ssh_key_id: mega_syndicate_west
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: windows
+    driver: 
+      image_id: ami-7dddd31b
+      region: eu-west-1
+      subnet_id: subnet-80f98bf7
+      security_group_ids: 
+        - sg-63257004
+      availability_zone: a
+      guest: windows
+      communicator: windows
+      tags: 
+        Name: kitchen-ec2-windows
+
+transport: 
+  name: 'winrm'
+  ssh_key: C:/Users/Admin/.ssh/mega_syndicate_west.pem
+
+suites:
+  - name: default
+    run_list:
+      - recipe[chef-client]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+      chef-client:
+        task:
+          frequency: "hourly",
+          frequency_modifier: "60"
