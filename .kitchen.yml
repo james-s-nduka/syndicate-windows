@@ -28,7 +28,7 @@ transport:
 suites:
   - name: default
     run_list:
-      - recipe[chef-client]
+      - recipe[syndicate-windows]
     verifier:
       inspec_tests:
         - test/smoke/default

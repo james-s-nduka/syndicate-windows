@@ -18,4 +18,4 @@
 # limitations under the License.
 #
 
-Chef::Log.warn('The windows::default recipe has been deprecated. The gems previously installed in this recipe ship in the Chef MSI.')
+include_recipe 'chef-client'
