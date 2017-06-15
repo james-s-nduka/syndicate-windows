@@ -27,7 +27,7 @@ end
 desc 'Run Idempotence tests'
 task :idempotency do
 	puts 'Running idempotency'
-	sh 'echo HELLO'
+	puts 'Finished Testing. Now destroying'
 	sh 'kitchen destroy'
 end
 
