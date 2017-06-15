@@ -12,9 +12,11 @@ node('master'){
 	sh  'rake rubocop'
 
 	stage 'Foodcritic'
+	//Linting
 	sh 'rake foodcritic'
 
 	stage 'Kitchen Build'
+	//Spin up VM and converge
 	sh 'rake build'
 
 	stage 'Verify'
@@ -24,5 +26,5 @@ node('master'){
 	sh 'rake idempotency'
 
 	stage 'Deploy'
-	sh 'rake deploy'
+	sh 'rake COOKBOOK=syndicate-windows deploy'
 }

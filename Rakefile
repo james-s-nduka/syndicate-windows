@@ -14,7 +14,7 @@ end
 
 desc 'Build VM with Cookbook'
 task :build do
-	puts 'Kitchen converge of VM'
+	puts 'Attempting to converge the Kitchen VM with Windows cookbook'
 	sh 'kitchen converge'
 end
 
@@ -33,7 +33,7 @@ end
 
 desc 'Deploy cookbook'
 task :deploy do
-	puts 'Upload of new cookbook'
+	puts "Upload of #{cookbook} cookbook"
 	sh "knife cookbook upload #{cookbook}"
 end
 
