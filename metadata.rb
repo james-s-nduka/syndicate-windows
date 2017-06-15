@@ -6,7 +6,7 @@ description 'Everything to get a Windows machine configured'
 issues_url 'https://github.com/james-s-nduka/syndicate-windows/issues'
 source_url 'https://github.com/james-s-nduka/syndicate-windows'
 chef_version '>= 12.5'
-version '0.0.6'
+version '0.0.7'
 supports 'windows'
 
 depends 'chef-client'

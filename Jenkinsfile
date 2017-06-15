@@ -13,22 +13,22 @@ node('master'){
 
 	stage 'Rubocop'
 	//Linting
-	sh  'rake rubocop'
+	sh  '/opt/chefdk/embedded/bin/rake rubocop'
 
 	stage 'Foodcritic'
 	//Linting
-	sh 'rake foodcritic'
+	sh '/opt/chefdk/embedded/bin/rake foodcritic'
 
 	stage 'Kitchen Build'
 	//Spin up VM and converge
-	sh 'rake build'
+	sh '/opt/chefdk/embedded/bin/rake build'
 
 	stage 'Verify'
-	sh 'rake test'
+	sh '/opt/chefdk/embedded/bin/rake test'
 
 	stage 'Idempotency'
-	sh 'rake idempotency'
+	sh '/opt/chefdk/embedded/bin/rake idempotency'
 
 	stage 'Deploy'
-	sh 'rake COOKBOOK=syndicate-windows deploy'
+	sh '/opt/chefdk/embedded/bin/rakes COOKBOOK=syndicate-windows deploy'
 }
