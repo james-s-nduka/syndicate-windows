@@ -9,7 +9,7 @@ node('master'){
 
 	stage 'Checkout'
 	// Get our code from the GitHub repository
-	git url: 'git@synwin-windows.github.com:james-s-nduka/syndicate-windows.git'
+	git url: 'git@synwin-windows:james-s-nduka/syndicate-windows.git'
 
 	stage 'Rubocop'
 	//Linting
