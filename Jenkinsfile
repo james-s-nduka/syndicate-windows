@@ -21,13 +21,13 @@ node('master'){
 
 	stage 'Kitchen Build'
 	//Spin up VM and converge
-	//sh '/opt/chefdk/embedded/bin/rake build'
+	sh 'echo /opt/chefdk/embedded/bin/rake build'
 
 	stage 'Verify'
-	//sh '/opt/chefdk/embedded/bin/rake test'
+	//sh 'echo /opt/chefdk/embedded/bin/rake test'
 
 	stage 'Idempotency'
-	//sh '/opt/chefdk/embedded/bin/rake idempotency'
+	//sh 'echo /opt/chefdk/embedded/bin/rake idempotency'
 
 	stage 'Deploy'
 	sh '/opt/chefdk/embedded/bin/rake COOKBOOK=syndicate-windows deploy'
