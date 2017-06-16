@@ -26,7 +26,7 @@ platforms:
 
 transport: 
   name: 'winrm'
-  ssh_key: C:/Users/Admin/.ssh/mega_syndicate_west.pem
+  ssh_key: ~/.ssh/mega_syndicate_west.pem
 
 suites:
   - name: default
